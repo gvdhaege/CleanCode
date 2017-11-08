@@ -16,7 +16,13 @@ public class CardRepository {
         entityManager.persist(card);
     }
 
-    public Card findCard(String barcode) {
+    public Card findCardByID(int id) {
+        return entityManager.createQuery("select c from Card c where c.id = :id", Card.class)
+                .setParameter("id", id)
+                .getSingleResult();
+    }
+
+    public Card findCardByBarcode(String barcode) {
         return entityManager.createQuery("select c from Card c where c.barcode = :barcode", Card.class)
                 .setParameter("barcode", barcode)
                 .getSingleResult();

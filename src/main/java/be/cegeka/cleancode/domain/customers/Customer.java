@@ -38,4 +38,24 @@ public class Customer {
         this.card = card;
         return this;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Customer customer = (Customer) o;
+
+        if (id != customer.id) return false;
+        if (name != null ? !name.equals(customer.name) : customer.name != null) return false;
+        return card != null ? card.equals(customer.card) : customer.card == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id;
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + (card != null ? card.hashCode() : 0);
+        return result;
+    }
 }

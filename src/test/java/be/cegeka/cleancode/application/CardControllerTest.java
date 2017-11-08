@@ -22,5 +22,9 @@ public class CardControllerTest {
     @Mock
     private CardService cardService;
 
-
+    @Test
+    public void addCard_shouldActivateMethodInCardService() throws Exception {
+        cardController.addCard("123456");
+        verify(cardService).addCard("123456");
+    }
 }

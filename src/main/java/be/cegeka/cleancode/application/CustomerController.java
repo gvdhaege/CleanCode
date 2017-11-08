@@ -1,5 +1,6 @@
 package be.cegeka.cleancode.application;
 
+import be.cegeka.cleancode.domain.customers.Customer;
 import be.cegeka.cleancode.domain.customers.CustomerService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,6 +26,11 @@ public class CustomerController {
     @PostMapping(path = "/linkCard")
     public void linkCard(@RequestParam(value = "barcode", required = true) String barcode, @RequestParam(value = "customer_id", required = true) int customer_ID){
         customerService.linkCard(barcode, customer_ID);
+    }
+
+    @PostMapping(path = "/findCustomerByBarcode")
+    public Customer findByBarcode(@RequestParam(value = "barcode", required = true) String barcode){
+        return customerService.findCustomerByBarcode(barcode);
     }
 
 }

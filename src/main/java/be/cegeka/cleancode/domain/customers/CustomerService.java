@@ -24,8 +24,14 @@ public class CustomerService {
     }
 
     public void linkCard(String barcode, int customer_id) {
-        Customer customer = customerRepository.findCustomer(customer_id);
-        Card card = cardRepository.findCard(barcode);
+        Customer customer = customerRepository.findCustomerByID(customer_id);
+        Card card = cardRepository.findCardByBarcode(barcode);
         customer.addCard(card);
+    }
+
+    public Customer findCustomerByBarcode(String barcode) {
+        Card card = cardRepository.findCardByBarcode(barcode);
+        int cardId = card.getId();
+        return customerRepository.findCustomerByID(cardId);
     }
 }
