@@ -22,7 +22,9 @@ public class CustomerController {
         customerService.addCustomer(name);
     }
 
-
-
+    @PostMapping(path = "/linkCard")
+    public void linkCard(@RequestParam(value = "barcode", required = true) String barcode, @RequestParam(value = "customer_id", required = true) int customer_ID){
+        customerService.linkCard(barcode, customer_ID);
+    }
 
 }

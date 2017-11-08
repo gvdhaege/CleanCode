@@ -1,6 +1,8 @@
 package be.cegeka.cleancode.domain.customers;
 
 
+import be.cegeka.cleancode.domain.cards.Card;
+
 import javax.persistence.*;
 
 @Entity
@@ -12,6 +14,13 @@ public class Customer {
     private int id;
     @Column(name = "NAME")
     private String name;
+    @OneToOne
+    @JoinColumn(name = "CARD_ID")
+    private Card card;
+
+    public Customer() {
+
+    }
 
     public Customer(String name) {
         this.name = name;
@@ -23,5 +32,10 @@ public class Customer {
 
     public String getName() {
         return name;
+    }
+
+    public Customer addCard(Card card) {
+        this.card = card;
+        return this;
     }
 }
