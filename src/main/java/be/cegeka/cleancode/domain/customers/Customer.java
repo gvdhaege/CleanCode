@@ -26,6 +26,11 @@ public class Customer {
         this.name = name;
     }
 
+    public Customer(CustomerBuilder builder){
+        this.name = builder.getName();
+        this.id = builder.getId();
+    }
+
     public int getId() {
         return id;
     }

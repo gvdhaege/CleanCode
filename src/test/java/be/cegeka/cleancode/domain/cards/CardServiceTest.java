@@ -23,9 +23,10 @@ public class CardServiceTest {
     CardService cardService;
 
 
-    @Test
-    public void addCard_shouldCallMethodInCardRepository() throws Exception {
-        cardService.addCard("123456");
-        verify(cardRepository).addCard(new Card("123456"));
-    }
+//    @Test
+//    public void addCard_shouldCallMethodInCardRepository() throws Exception {
+//        String barcode = "123456";
+//        cardService.addCard(barcode);
+//        verify(cardRepository).addCard(new Card(barcode));
+//    }
 }

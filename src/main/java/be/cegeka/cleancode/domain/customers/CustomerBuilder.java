@@ -2,6 +2,7 @@ package be.cegeka.cleancode.domain.customers;
 
 public class CustomerBuilder {
 
+    private int id;
     private String name;
 
     public Customer buildFull(){
@@ -14,7 +15,16 @@ public class CustomerBuilder {
         return this;
     }
 
+    public CustomerBuilder withId(int id){
+        this.id = id;
+        return this;
+    }
+
     public String getName() {
         return name;
+    }
+
+    public int getId() {
+        return id;
     }
 }

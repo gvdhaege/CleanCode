@@ -22,9 +22,10 @@ public class CustomerServiceTest {
     private CustomerRepository customerRepository;
 
 
-//    @Test
-//    public void addCustomer_shouldCallInCustomerRepository() throws Exception {
-//        customerService.addCustomer("jefke");
-//        verify(customerRepository).addCustomer(new Customer("jefke"));
-//    }
+    @Test
+    public void addCustomer_shouldCallInCustomerRepository() throws Exception {
+        customerService.addCustomer("jefke");
+        verify(customerRepository).addCustomer(new Customer("jefke"));
+    }
+
 }
