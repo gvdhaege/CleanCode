@@ -14,8 +14,7 @@ public class CustomerService {
     private CustomerRepository customerRepository;
     @Inject
     private CardRepository cardRepository;
-    @PersistenceContext
-    private EntityManager entityManager;
+
 
     public void addCustomer(String name) {
         CustomerBuilder customerBuilder = new CustomerBuilder();

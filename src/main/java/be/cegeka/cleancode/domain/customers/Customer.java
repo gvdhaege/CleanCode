@@ -14,7 +14,7 @@ public class Customer {
     private int id;
     @Column(name = "NAME")
     private String name;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "CARD_ID")
     private Card card;
 
